@@ -1,0 +1,61 @@
+{
+  "_from": "git+https://github.com/jerson/react-native-pinch.git",
+  "_id": "react-native-pinch@0.1.0",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/react-native-pinch",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/jerson/react-native-pinch",
+    "rawSpec": "https://github.com/jerson/react-native-pinch",
+    "saveSpec": "git+https://github.com/jerson/react-native-pinch.git",
+    "fetchSpec": "https://github.com/jerson/react-native-pinch.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/jerson/react-native-pinch.git#022a24d36fd0b9c45ef3cb25a1fa459f8bdf9442",
+  "_spec": "https://github.com/jerson/react-native-pinch",
+  "_where": "/Users/Omar/Documents/ProjectReactNative/AppCajaTrujillo5/frontend",
+  "author": {
+    "name": "Localz"
+  },
+  "bugs": {
+    "url": "https://github.com/localz/react-native-pinch/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "q": "^1.4.1"
+  },
+  "deprecated": false,
+  "description": "React Native fetch with SSL Pinning support",
+  "devDependencies": {
+    "react": "15.3.2",
+    "react-native": "^0.34"
+  },
+  "homepage": "https://github.com/localz/react-native-pinch#readme",
+  "keywords": [
+    "react-native",
+    "ios",
+    "android",
+    "SSL",
+    "Network"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "react-native-pinch",
+  "peerDependencies": {
+    "react-native": ">=0.34 <1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/localz/react-native-pinch.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.1.0"
+}
