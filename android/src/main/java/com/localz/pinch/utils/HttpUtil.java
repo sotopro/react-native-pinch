@@ -1,5 +1,7 @@
 package com.localz.pinch.utils;
 
+import android.os.Build;
+
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.WritableMap;
 
@@ -26,6 +28,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLSocketFactory;
 
 public class HttpUtil {
     private static final String DEFAULT_CONTENT_TYPE = "application/json";
@@ -80,11 +83,21 @@ public class HttpUtil {
         connection = (HttpsURLConnection) url.openConnection();
 
        if(request.sslPinningCerts.length > 0 || !request.mutualAuthCert.isEmpty() || !request.mutualAuthPassword.isEmpty()){
-           connection.setSSLSocketFactory(KeyPinStoreUtil.getInstance(
+           SSLSocketFactory socketFactory = KeyPinStoreUtil.getInstance(
                    request.sslPinningCerts,
                    request.mutualAuthCert,
                    request.mutualAuthPassword
-           ).getContext().getSocketFactory());
+           ).getContext().getSocketFactory();
+           if (Build.VERSION.SDK_INT >= 16) {
+               socketFactory = new Tls12SocketFactory(socketFactory);
+           }
+           connection.setSSLSocketFactory(socketFactory);
+
+           /*connection.setSSLSocketFactory(KeyPinStoreUtil.getInstance(
+                   request.sslPinningCerts,
+                   request.mutualAuthCert,
+                   request.mutualAuthPassword
+           ).getContext().getSocketFactory());*/
 
        }
 
